@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script>
+        function Create_Prof(){
+            location.assign("./Home.html")
+        }
+    </script>
+    <style>
+      @media screen and (max-width : 60rem) {
+        #illus3{
+          display: none !important;
+        }
+      }
+    </style>
+</head>
+<body style="display: flex;gap: 24px;flex-wrap: wrap;background-image: linear-gradient(rgb(25, 165, 165),white); padding: 12px ;background-repeat: no-repeat; background-size: cover;">
+    <div style="width: 100%; padding: 12px;">
+      <img src="./Vizzle_icon.png"   height="60px" />
+    </div>  
+    <div style="display: flex; flex-direction: row; gap: 20px; width: 100%;">
+      <div id="illus3" style="width: 100%;">
+        <img src="./illus3.svg" height="500px"/>
+      </div>
+     <div style="padding: 20px;padding-bottom: 37px;width: 100%;border-radius: 30px;border-style: solid; gap: 35px; align-items: center; justify-content: center; align-content: center;display: flex; flex-direction: column;"> 
+     <h1 style=" text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 3rem;">
+      Design your Profile
+      </h1>
+     <div style="align-content: center;max-height: fit-content; justify-content: center; flex-direction: column; display: flex; gap: 50px; align-items: center;"> 
+       <input id="name" type="text" placeholder="Name" style="padding: 15px;font-size: large; border-radius: 50px;box-shadow: inset 8.5px 7px 3px rgba(26, 25, 25, 0.25);"/>
+       <input id="section" type="text" placeholder="Section" minlength=8 style="padding: 15px;font-size: large; border-radius: 50px;box-shadow: inset 8.5px 7px 3px rgba(26, 25, 25, 0.25);"/>
+       <label for="gender" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 25px;">Gender &nbsp;
+          <select style="padding: 9px; border-radius: 10px;" id="genders">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+      </label>
+      <label for="dob" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 25px;">Date of Birth &nbsp;
+          <input type="date"/>
+      </label>
+      <textarea id="desc" placeholder="Profile Description" style="padding: 20px; font-size: large; min-height: 60px; border-radius: 18px; overflow:visible;"></textarea>
+      <textarea id="hobb" placeholder="Hobbies *Give Comma after each hobby*" style="padding: 20px; font-size: large; min-height: 60px; border-radius: 18px; overflow:visible;"></textarea>
+     </div>
+          <div style="padding: 15px;cursor: pointer; border-radius: 16px; border-color: black; border-width: 1px; border-style: solid;" onclick="Create_Prof()">
+            <a style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CREATE</a>
+          </div>
+     </div>
+
+    </div>
+   </body>
+</html>
