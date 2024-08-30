@@ -16,12 +16,19 @@
         }
         #logo{
             height:50px;
-        }
+        } 
+        #logo_contain{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+       }
       }
     </style>
 </head>
 <body style="display: flex;gap: 24px;flex-wrap: wrap;background-image: linear-gradient(rgb(25, 165, 165),white); padding: 12px ;background-repeat: no-repeat; background-size: cover;">
-    <div style="width: 100%; padding: 12px;">
+    <div id="logo_contain" style="width: 100%; padding: 12px;">
       <img id='logo' src="./Vizzle_icon.png"   height="60px" />
     </div>  
     <div style="display: flex; flex-direction: row; gap: 20px; width: 100%;">
