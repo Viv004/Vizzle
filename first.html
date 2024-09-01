@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Vizzle</title>
+    <style>
+        .video-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 97vh;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            height: 110vh;
+        }
+        @media screen and (max-width: 50rem) {
+            video{
+                height: 67vh;
+            }
+        }
+    </style>
+</head>
+<body style="background-color:hsl(180, 58%, 38%);">
+    <div class="video-container">
+        <video src="./Vizzle.mp4"  autoplay loop muted>
+        </video>
+    </div>
+</body>
+</html>
