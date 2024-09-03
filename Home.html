@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vizzle</title>
+    
+    <style>
+       .profile_tab:hover{
+            background-color: aqua;
+       }
+        ::-webkit-scrollbar{
+            width: 8px;
+            background-color:aliceblue;
+            border-radius: 60px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #F4ED46;
+            border-radius: 60px;
+            height: 10px;
+        }
+        div.tab_menu:hover{
+            background-color: white;
+            border-style: solid;
+            border-width: thin;
+        }
+        .modal_box{
+            cursor: pointer;
+            width: 15vh;
+            height: 15vh;
+            background-color: #F4ED46;
+            border-radius: 10%;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            align-content: center;
+            border-style: solid;
+            display: flex;
+        }
+        .modal{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+.modal1{
+    position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.bisible{
+    display: none !important;
+}
+.bisible1{
+    display: none !important;
+}
+
+        @media screen and (max-width: 65rem) {
+            .nav_sec{
+             display: none !important;
+            }
+            .adjust{
+                margin-top: 20vh;
+            }
+            #logo{
+                height:  45px;
+            }
+         }
+</style>
+</head>
+<body style="display: flex;gap: 19px;flex-wrap: wrap;background-image: linear-gradient(rgb(25, 165, 165),white);background-repeat: no-repeat; background-size: cover;">
+   <script src='https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js'></script>
+   <script src='https://www.gstatic.com/firebasejs/7.22.1/firebase-storage.js'></script>
+   <script src='https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js'></script>
+   <script type="text/javascript" src="./function.js"></script>
+   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+        const arr = ['baki','hanma','jeffrey','Aditi','Aditi','Aditi','Aditi'];
+        arr.map((val, i) => {
+            const list1 = document.getElementById("friend_mate_list");
+            const ul = document.createElement("ul");
+            const div = document.createElement("div");
+            const img = document.createElement("img");
+            const p = document.createElement("p");
+            img.src = './man.jpg';
+            img.style = "width:28px;height:28px;border-radius:50%";
+            div.style = "display:flex;flex-direction:row;gap:15px;align-items:center;cursor:pointer;";
+            p.style = "font-size: larger;";
+            p.textContent = val;
+            div.appendChild(img);
+            div.appendChild(p);
+            list1.appendChild(div);
+        });
+    });
+  // Initialize Firebase app
+firebase.initializeApp(firebaseConfig);
+   function do_it() {
+    const img = document.getElementById("input");
+    img.style.backgroundImage = `url(${URL.createObjectURL(document.querySelector("#upimg").files[0])})`;
+    document.getElementById('tagx').style.zIndex = '-5';
+}
+
+ function post() {
+    const jk = document.getElementById("posts");
+    const don = document.createElement("div");
+    don.style = "background-color:yellow; width: 34.5vh; height:10rem; margin-bottom:20px;";
+    jk.appendChild(don);
+}
+
+function upload() {
+    console.log();
+    const storage = firebase.storage(); // Use getStorage() from the imported Firebase SDK
+    const storageRef = storage.ref();
+
+    const file = document.querySelector("#upimg").files[0];
+    const uploadTask = storageRef.child(file.name).put(file);
+
+    uploadTask.on('state_changed', function(snapshot) {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload progress: ' + progress + '%');
+    }, function(error) {
+        console.error('Error uploading file: ', error);
+    }, function() {
+        document.querySelector('.modal1').classList.toggle('bisible1');
+        const img = document.getElementById("input");
+        img.style.backgroundImage = ``;
+        document.getElementById('tagx').style.zIndex = '1';
+        alert('done');
+    });
+    const data = {
+        name: document.querySelector("#upimg").files[0].name,
+        date:Date.now(),
+        desc: document.getElementById("desc").value,
+        tag: document.getElementById("tagss").value
+    }
+    const db = firebase.firestore();
+    db.collection("users").add({
+        data
+    }).then((docRef) =>{
+        console.log('Document Written : ',docRef);
+        alert("Stored Done");
+    }).catch((e) =>{
+        console.log("Some Errors :"+e);
+    })
+}
+   </script>
+
+    <div class="modal bisible" onclick="document.querySelector('.modal').classList.toggle('bisible')" style="display: flex;flex-wrap: wrap; align-items: center;align-content: center;justify-content: center;">
+        <div style="display: flex;flex-wrap: wrap;width: 43vh; height:38vh; gap: 30px;z-index: 1; ">    
+            <div title="Post Image" class="modal_box"  onclick="document.querySelector('.modal1').classList.toggle('bisible1')">
+                <img src="./image.png" height="48vh"/>
+            </div>
+            <div title="Post Video" class="modal_box">
+                <img src="./video.png" height="48vh"/>
+            </div>
+            <div title="Carousel Image or Video " class="modal_box">
+                <img src="./carousel.png" height="48vh"/>
+            </div>
+            <div title="Microblog" class="modal_box">
+                <img src="./blog.png" height="49vh"/>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal1 bisible1" style="align-content: center;justify-content: center; align-items: center;display: flex;">
+        <div class="adjust" style="background-color: rgba(240, 248, 255, 0.796);margin-top: 4.2vh;border-style: solid; width: 58vh; border-radius: 14px; padding: 2vh; display: flex; flex-direction: column;gap:3vh;align-content: center;justify-content: center;align-items: center;">
+            <h1>Post Image</h1>
+            <div id="input"  onclick="document.getElementById('upimg').click()" style="cursor: pointer;background-color: #F4ED46;display: flex;background-size: contain;background-repeat: no-repeat;justify-content: center;align-content: center; width: 189px; height: 189px;border-radius: 8px; ">
+                <h3 id="tagx" style="cursor: pointer;align-self: center;">UPLOAD</h3>
+                <input style="display: none !important;" id="upimg" type="file" accept="image/*;capture=camera" onchange="do_it()"/>
+            </div>               
+            <input style="font-size: 1.3rem; padding: 9px;border-radius: 2vh;" placeholder="Description" id="desc" name="description"/>
+            <input style="font-size: 1.3rem; padding: 9px;border-radius: 2vh;" placeholder="Tag" id="tagss" onkeydown="if(event.key === 'Enter'){
+                var data =   document.getElementById('tagss').value;
+                document.getElementById('tagss').value = `<p style='padding:6px; color:'yellow';'>${data}</p>`
+            }"/>
+            <input style="font-size: 1.3rem; padding: 9px;border-radius: 2vh;" placeholder="Location" name="location"/>
+            <div style="display: flex; flex-direction: row;gap:13px;">
+                <div onclick="upload()" style="background-color: aqua;cursor: pointer; border-radius: 10px; border-style: double; padding-left: 12px; padding-right: 12px;">
+                    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"> POST</h3>
+                </div>
+                <div onclick="document.querySelector('.modal1').classList.toggle('bisible1')" style="background-color: rgb(190, 87, 87);cursor: pointer; border-radius: 10px; border-style: double; padding-left: 12px; padding-right: 12px;">
+                    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"> CANCEL</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;padding: 14px;align-items: center;align-content: center;justify-content: center;">
+        <img id="logo" src="./Vizzle_icon.png"   height="60vh"/>
+        <h3 onclick='document.querySelector(".modal").classList.toggle("bisible")' style="float: right;width: 15vh;cursor: pointer;align-self:  self-end;background-color: aquamarine; border-radius: 14px;padding: 13px;text-align: center"><strong>+</strong> Add Post</h3> 
+    </div>
+   
+      <div  class="nav_sec"  style="gap: 27px; display: flex; flex-direction: column;margin-left: 12px;">
+        <div style="display: flex; flex-direction: row;gap: 10px; border-radius: 17px;background-color: rgb(25, 165, 165); padding: 10px; align-content: center; align-items: center;">
+            <img src="./search.png" width="27px" height="27px"/>
+          <input style="font-family: 'Times New Roman', Times, serif; padding: 10px;font-size: large;border-radius: 17px; border-width: 0px;" placeholder="Search"/>
+        </div>   
+        <div class="tab_menu" style="cursor: pointer;;padding: 13px; border-radius: 13px ;flex-direction: row; display: flex; gap: 14px; align-items: center;align-content: center;"><img src="./Home.png" width="33px" height="33px"/>
+                <a style="font-size: medium;">Home</a>
+            </div>
+            <div class="tab_menu" style="padding: 13px; cursor: pointer;;border-radius: 13px ;flex-direction: row; display: flex; gap: 14px; align-items: center;align-content: center;"><img src="./chat.png" width="33px" height="33px"/>
+                <a style="font-size: medium;">Chat</a>
+            </div>
+            <div class="tab_menu" style="padding: 13px; cursor: pointer;;border-radius: 13px ;flex-direction: row; display: flex; gap: 14px; align-items: center;align-content: center;"><img src="./bell.png" width="33px" height="33px"/>
+                <a style="font-size: medium;">Notifications</a>
+            </div>
+            <div class="tab_menu" style="padding: 13px; cursor: pointer;;border-radius: 13px ;flex-direction: row; display: flex; gap: 14px; align-items: center;align-content: center;"><img src="./about.png" width="33px" height="33px"/>
+                <a style="font-size: medium;">About</a>
+            </div>
+        </div>
+           <div id="posts" style="margin-left: 13vh;padding: 10vh; height:20vh;overflow-x: hidden; overflow-y: auto ;">
+           </div>
+           
+           <div style="padding: 5px; display: flex; gap: -10px;flex-direction: column;padding: 12px;" id="user_profile">
+               <img src="./expand.svg" style="width: 30px; margin-bottom: 9px; height: 30px; position: absolute; float: right;"/>
+               <div style="align-items: center;justify-content: center; align-content: center; display: flex;flex-direction: column;">
+                 <img src="./man.jpg" style="border-radius: 50%; width: 130px; height: 130px;"/>
+                 <h4 style="font-family:Georgia, 'Times New Roman', Times, serif;">Username</h4>
+               </div>
+               <div style="display: flex;gap: 18px;">
+                 <h3 class="profile_tab" style="cursor: pointer;background-color: aqua;border-radius: 13px;padding: 8px;">Friends</h3>
+                 <h3 class="profile_tab" style="cursor: pointer;border-radius: 10px;padding: 8px;">Classmate</h3>
+               </div>
+           
+               <li id="friend_mate_list" style="max-height: 200px;list-style: none;overflow-y: auto; scroll-behavior: smooth;">
+                    
+               </li>
+          </div>
+   </body>
+</html>
