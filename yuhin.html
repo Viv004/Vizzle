@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title style="font-weight: bolder;">Impala</title>
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Mirza|Roboto" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8465816404750811" crossorigin="anonymous"></script>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+
+  <style>
+  @font-face {
+        font-family: "Ortland";
+        src: url("https://www.behance.net/gallery/195207097/Ortland-100-Free-Font") format('woff2');
+      }
+      @font-face {
+        font-family: "Peristiwa";
+        src: url("https://viv004.github.io/Impala.org/Peristiwa.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "TOMMY_Medium_Outline";
+        src: url("https://viv004.github.io/Impala.org/TOMMY_Medium_Outline.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "TOMMY_Medium";
+        src: url("https://viv004.github.io/Impala.org/TOMMY_Medium.woff2") format('woff2');
+      }  
+      @font-face {
+        font-family: "TOMMY_Bold";
+        src: url("https://viv004.github.io/Impala.org/TOMMY_Bold.woff2") format('woff2');
+      }
+        @font-face {
+        font-family: "TOMMY_Regular";
+        src: url("https://viv004.github.io/Impala.org/TOMMY_Regular.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "TOMMY_Regular_Outline";
+        src: url("https://viv004.github.io/Impala.org/TOMMY_Regular_Outline.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Thinking_of_Betty";
+        src: url("https://viv004.github.io/Impala.org/Thinking_of_Betty.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Montreau-Regular";
+        src: url("https://viv004.github.io/Impala.org/Montreau-Regular.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Mhoko";
+        src: url("https://viv004.github.io/Impala.org/Mhoko.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Kate_Medium";
+        src: url("https://viv004.github.io/Impala.org/Kate_Medium.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Inverse";
+        src: url("https://viv004.github.io/Impala.org/Inverse.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "INFINITY_Medium";
+        src: url("https://viv004.github.io/Impala.org/INFINITY_Medium.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Hugolers";
+        src: url("https://viv004.github.io/Impala.org/Hugolers.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Hey_August";
+        src: url("https://viv004.github.io/Impala.org/Hey_August.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Herbert";
+        src: url("https://viv004.github.io/Impala.org/Herbert.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Greatest_Richmond";
+        src: url("https://viv004.github.io/Impala.org/Greatest_Richmond.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Gord_Quick";
+        src: url("https://viv004.github.io/Impala.org/Gord_Quick.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Classy_Vogue";
+        src: url("https://viv004.github.io/Impala.org/Classy_Vogue.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Bright_Melody";
+        src: url("https://viv004.github.io/Impala.org/Bright_Melody.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Belymon";
+        src: url("https://viv004.github.io/Impala.org/Belymon.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Beanco";
+        src: url("https://viv004.github.io/Impala.org/Beanco.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "August";
+        src: url("https://viv004.github.io/Impala.org/August.woff2") format('woff2');
+      }
+      @font-face {
+        font-family: "Attena";
+        src: url("https://viv004.github.io/Impala.org/Attena.woff2") format('woff2');
+      }
+        .ql-font-roboto {
+          font-family: "Roboto";
+        }
+        .ql-font-mirza {
+          font-family: "Mirza";
+        }
+        .ql-font-poppins {
+          font-family: "Poppins", serif;
+        }
+        .ql-font-bona_nova {
+            font-family: "Bona Nova SC", serif;
+        }
+        .ql-font-aref_requa {
+          font-family: "Aref Ruqaa";
+        }
+        .ql-font-ortland {
+          font-family: "Ortland";
+        }
+        .ql-font-gord_q {
+          font-family: "Gord_Quick";
+        }
+        .ql-font-peristiwa {
+          font-family: "Peristiwa";
+        }
+        .ql-font-tommy_medium_outline {
+          font-family: "Tommy_Medium_Outline";
+        }
+        .ql-font-tommy_medium {
+          font-family: "Tommy_Medium";
+        }
+        .ql-font-tommy_bold {
+          font-family: "Tommy_Bold";
+        }
+        .ql-font-tommy_regular {
+          font-family: "Tommy_Regular";
+        }
+        .ql-font-tommy_regular_outline {
+          font-family: "Tommy_Regular_Outline";
+        }
+        .ql-font-betty {
+          font-family: "Betty";
+        }
+        .ql-font-montreau {
+          font-family: "Montreau";
+        }
+        .ql-font-mhoko {
+          font-family: "Mhoko";
+        }
+          .ql-font-kate {
+          font-family: "Kate";
+        }
+          .ql-font-inverse {
+          font-family: "Inverse";
+        }
+          .ql-font-infinity_medium {
+          font-family: "INFINITY_Medium";
+        }
+          .ql-font-hugolers {
+          font-family: "Hugolers";
+        } 
+          .ql-font-hey_august {
+          font-family: "Hey_August";
+        } 
+          .ql-font-herbert {
+          font-family: "Herbert";
+        }
+          .ql-font-greatest_richmond {
+          font-family: "Greatest_Richmond";
+        } 
+          .ql-font-classy_vogue {
+          font-family: "Classy_Vogue";
+        } 
+          .ql-font-bright_melody {
+          font-family: "Bright_Melody";
+        } 
+          .ql-font-belymon {
+          font-family: "Belymon";
+        } 
+          .ql-font-beanco {
+          font-family: "Beanco";
+        } 
+        .ql-font-august {
+          font-family: "August";
+        } 
+        .ql-font-attena {
+          font-family: "Attena";
+        } 
+
+      #toolbar .ql-font span[data-label="Sans Serif"]::before {
+            font-family: "Sans Serif";
+          }
+      
+      #toolbar .ql-font span[data-label="Roboto"]::before {
+        font-family: "Roboto";
+      }
+      
+      #toolbar .ql-font span[data-label="Mirza"]::before {
+        font-family: "Mirza";
+      }
+      #toolbar .ql-font span[data-label="Poppins"]::before {
+       font-family: "Poppins", serif;
+      }
+      #toolbar .ql-font span[data-label="Bona_Nova"]::before {
+        font-family: "Bona Nova SC", serif;
+      }
+      #toolbar .ql-font span[data-label="Aref_Requa"]::before {
+        font-family: "Aref Ruqaa";
+      }
+      #toolbar .ql-font span[data-label="Ortland"]::before {
+        font-family: "Ortland";
+      }
+      #toolbar .ql-font span[data-label="Gord_Q"]::before {
+         font-family: "Gord_Quick";
+      }
+      #toolbar .ql-font span[data-label="Peristiwa"]::before {
+         font-family: "Peristiwa";
+      }
+      #toolbar .ql-font span[data-label="Tommy_Medium_Outline"]::before {
+        font-family: "Tommy_Medium_Outline";
+      }
+       #toolbar .ql-font span[data-label="Tommy_Medium"]::before {
+         font-family: "Tommy_Medium";
+      }
+       #toolbar .ql-font span[data-label="Tommy_Bold"]::before {
+         font-family: "Tommy_Bold";
+      }
+        #toolbar .ql-font span[data-label="Tommy_Regular"]::before {
+        font-family: "Tommy_Regular";
+      }
+       #toolbar .ql-font span[data-label="Tommy_Regular_Outline"]::before {
+        font-family: "Tommy_Regular_Outline";
+      }
+       #toolbar .ql-font span[data-label="Betty"]::before {
+        font-family: "Betty";
+      }
+       #toolbar .ql-font span[data-label="Montreau"]::before {
+        font-family: "Montreau";
+      }
+       #toolbar .ql-font span[data-label="Mhoko"]::before {
+        font-family: "Mhoko";
+      }
+     #toolbar .ql-font span[data-label="Kate"]::before {
+        font-family: "Kate";
+      }
+       #toolbar .ql-font span[data-label="Inverse"]::before {
+        font-family: "Inverse";
+      }
+      #toolbar .ql-font span[data-label="Infinity"]::before {
+        font-family: "INFINITY_Medium";
+      }
+      #toolbar .ql-font span[data-label="Hugolers"]::before {
+         font-family: "Hugolers";
+      }
+       #toolbar .ql-font span[data-label="Hey_August"]::before {
+        font-family: "Hey_August";
+      }
+       #toolbar .ql-font span[data-label="Herbert"]::before {
+        font-family: "Herbert";
+      }
+        #toolbar .ql-font span[data-label="Greatest_Richmond"]::before {
+        font-family: "Greatest_Richmond";
+      }
+       #toolbar .ql-font span[data-label="Classy_Vogue"]::before {
+        font-family: "Classy_Vogue";
+      }
+       #toolbar .ql-font span[data-label="Bright_Melody"]::before {
+        font-family: "Bright_Melody";
+      }
+      #toolbar .ql-font span[data-label="Belymon"]::before {
+         font-family: "Belymon";
+      }
+        #toolbar .ql-font span[data-label="Beanco"]::before {
+        font-family: "Beanco";
+      }
+       #toolbar .ql-font span[data-label="August"]::before {
+        font-family: "August";
+      }
+       #toolbar .ql-font span[data-label="Attena"]::before {
+        font-family: "Attena";
+      }
+    #bg_color{
+        background-image: url('https://viv004.github.io/Impala.org/bg-color.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        border-radius: 5px;
+        border:1px solid black;
+        width:33px;
+        height:33px;
+        margin-top:8px;
+        margin-left:20px;
+    }
+    #insert_img{
+        background-image: url('https://viv004.github.io/Impala.org/insert_img.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        border-radius: 5px;
+        border:1px solid black;
+        width:33px;
+        height:33px;
+        margin-top:8px;
+        margin-left:20px;
+    }
+    #insert_code{
+        background-image: url('https://viv004.github.io/Impala.org/embed.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        border-radius: 5px;
+        border:1px solid black;
+        width:33px;
+        height:33px;
+        margin-top:8px;
+        margin-left:20px;
+    }
+    #ad{
+        background-image: url('https://viv004.github.io/Impala.org/ad.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        border-radius: 5px;
+        border:1px solid black;
+        width:33px;
+        height:33px;
+        margin-top:8px;
+        margin-left:20px;
+    }
+    #dialog{
+      display:initial;
+    }
+  </style>
+  </head>
+
+  <body>
+
+  <script src='https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/7.22.1/firebase-storage.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js'></script>
+
+
+  <div id="toolbar" style="display:flex;flex-direction: column;gap:15px;border-radius:12px;">
+    <span style="align-items:center;gap:16px;" class="ql-formats">
+        <select class="ql-size"></select>
+            <select class="ql-font">
+            <option selected>Sans Serif</option>
+            <option value="roboto">Roboto</option>
+            <option value="mirza">Mirza</option>
+            <option value="poppins">Poppins</option>
+            <option value="bona_nova">Bona_Nova</option>
+            <option value="aref_requa">Aref_Requa</option>
+            <option value="ortland">Ortland</option>
+            <option value="gord_q">Gord_Q</option>
+            <option value="peristiwa">Peristiwa</option>
+            <option value="tommy_medium_outline">Tommy_Medium_Outline</option>
+            <option value="tommy_medium">Tommy_Medium</option>
+            <option value="tommy_bold">Tommy_Bold</option>
+            <option value="tommy_regular">Tommy_Regular</option>
+            <option value="tommy_regular_outline">Tommy_Regular_Outline</option>
+            <option value="betty">Betty</option>
+            <option value="montreau">Montreau</option>
+            <option value="mhoko">Mhoko</option>
+            <option value="kate">Kate</option>
+            <option value="inverse">Inverse</option>
+            <option value="infinity_medium">Infinity</option>
+            <option value="hugolers">Hugolers</option>
+            <option value="hey_august">Hey_August</option>
+            <option value="herbert">Herbert</option>
+            <option value="greatest_richmond">Greatest_Richmond</option>
+            <option value="classy_vogue">Classy_Vogue</option>
+            <option value="bright_melody">Bright_Melody</option>
+            <option value="belymon">Belymon</option>
+            <option value="beanco">Beanco</option>
+            <option value="august">August</option>
+            <option value="attena">Attena</option>
+            </select>
+        <button style="width:28px;bottom:2px;" class="ql-bold"></button>
+        <button style="width:28px;bottom:2px;" class="ql-italic"></button>
+        <button style="width:28px;bottom:2px;" class="ql-strike"></button>
+        <button style="width:28px;bottom:2px;" class="ql-underline"></button>
+    </span>
+
+    <span style="align-items:center;gap:16px;" class="ql-formats">
+      <select style="width:32px;bottom:2px;" class="ql-color"></select>
+      <select style="width:32px;bottom:2px;"  class="ql-background"></select>
+      <button style="width:32px;bottom:2px;" class="ql-blockquote"></button>
+      <button style="width:32px;bottom:2px;" class="ql-list" value="ordered"></button>
+      <button style="width:32px;bottom:2px;" class="ql-list" value="bullet"></button>
+      <button class="ql-link"></button>
+      <select style="margin-left:18px;" class="ql-align"></select>
+      <button  id="add_divider"><span style="padding:10px;padding-top:3px;padding-bottom:3px;border-radius:4px;font-size:19px;border:1px solid black;">/</span></button>
+      <button class="ql-image"></button>
+    </span>
+   
+    
+   <span class="ql-formats">
+      <button onclick="document.getElementById('get_clr').click();" id="bg_color"></button>
+      <button onclick="document.querySelector('dialog').showModal()" id="insert_img"></button>
+      <button id="insert_code"></button>
+      <button id="ad"></button>
+       <button onclick="const html = quill.getSemanticHTML(0,quill.getLength()); console.log(html);" id="update_change" style="margin-top:13px;margin-left:18px;"></button>
+   </span>
+
+  </div>
+  
+     <div id="editor" style="width:100%;height:76vh;font-family: Aref Ruqaa;font-size:medium;border-radius:12px;"></div>
+     <input oninput="document.getElementById('editor').style.backgroundColor = document.getElementById('get_clr').value;" style="display:none !important;" id="get_clr" type="color">
+     <input style="display:none !important;" onchange="add_image()"  id="get_img" type="file">
+
+     <dialog style="background-color:white;padding:12px;flex-direction: column;gap:9px;align-items:center;">
+        <button onclick="document.querySelector('dialog').close()" style="align-self:flex-start;" autofocus>Cancel</button>
+        <h3 style="text-align:center;">Choose the media Source !</h3>
+        <button onclick="document.getElementById('get_img').click();">Media</button>
+        <button onclick="document.getElementById('new_dg').showModal()">Impala Storage</button>
+     </dialog>
+
+      <dialog id="new_dg" style="padding:10px;gap: 18px;">
+        <button onclick="document.getElementById('new_dg').close()" style="align-self:flex-start;" autofocus>Cancel</button>
+        <div id="imagesx" style="width:95%; display: flex;flex-wrap: wrap; gap:15px;max-height: 300px;column-gap: 18px;justify-content: space-around;">
+        </div>
+      </dialog>
+
+      <div style="align-content: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8465816404750811"
+        crossorigin="anonymous"></script>
+        <!-- impala_blog_ad -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-8465816404750811"
+            data-ad-slot="1529999317"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+     <script type='module' defer>
+          import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js';
+          import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js';
+          import { getFirestore, doc, getDoc , getDocs,collection, query,addDoc,Timestamp,where } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js';
+         
+          const firebaseConfig = {
+            apiKey: "AIzaSyAveyaKgsl7yM7lSmN9AMw48zEi7KN5gOM",
+            authDomain: "impala-org.firebaseapp.com",
+            projectId: "impala-org",
+            storageBucket: "impala-org.appspot.com",
+            messagingSenderId: "1027170751858",
+            appId: "1:1027170751858:web:e6451289369ad7ead639eb",
+            measurementId: "G-V2PJC1KXEF"
+          };
+          const app = initializeApp(firebaseConfig);
+          const dbx = getFirestore(app);
+          window.dbx = dbx ;
+           
+          let Font = Quill.import('formats/font');
+          
+          Font.whitelist = ['roboto', 'mirza',"poppins","bona_nova","aref_requa","ortland","gord_q","peristiwa","tommy_medium_outline","tommy_medium","tommy_bold","tommy_regular","tommy_regular_outline","betty","montreau","mhoko","kate","inverse","infinity_medium","hugolers","hey_august","herbert","greatest_richmond","classy_vogue","bright_melody","belymon","beanco","august","attena"]
+          Quill.register(Font, true);
+
+          const BlockEmbed = Quill.import('blots/block');
+          class DividerBlot extends BlockEmbed {
+            static create(){
+              const node = super.create();
+               node.setAttribute('style','width:50vh;border-top:0.5px solid black;height:0.5px;');
+              return node;
+            }
+          }
+
+          DividerBlot.blotName = 'divider';
+          DividerBlot.tagName = 'hr';
+          // Register the divider blot with Quill
+          Quill.register(DividerBlot);
+          // Define a custom blot for an image divider
+          const Blockyy = Quill.import('blots/block');
+          class ImageDividerBlot extends Blockyy {
+              static create(value) {
+                  const node = super.create();
+                  node.setAttribute('style', 'display: block;margin: 20px auto;width: 94%; height: 50%;object-fit:fill;');
+                  node.setAttribute('src', value); // Set the image source URL
+                  return node;
+              }
+          }
+          ImageDividerBlot.blotName = 'imageDivider';
+          ImageDividerBlot.tagName = 'img';
+
+          // Register the image divider blot with Quill
+          Quill.register(ImageDividerBlot);
+
+
+          const quill = new Quill('#editor',{
+              modules:{
+                  toolbar: '#toolbar',
+              },
+              theme:'snow'
+          });
+          window.quill = quill ;
+          
+          function insertDivider() {
+              const range = quill.getSelection(); // Get the current selection
+              if (range) {
+                  quill.insertEmbed(range.index, 'divider', true); // Insert a divider
+                  quill.setSelection(range.index + 1); // Move the cursor to the next line
+              }
+          }
+          // Add an event listener to the button
+        document.getElementById('add_divider').addEventListener('click',insertDivider);
+        const toolbar = quill.getModule('toolbar');
+          toolbar.addHandler('link', ()=>{
+              const href = prompt('Enter the URL');
+              const value = prompt('Enter the alt Text for the link');
+              quill.insertText(quill.getSelection().index, value, 'link', href);
+            });
+
+          quill.on('text-change',()=>{
+              document.getElementById("update_change").textContent = "Done" ; 
+          });
+         
+          document.getElementById('insert_img').addEventListener('click',()=>{
+            
+          });
+
+        impala_storage();
+        async function impala_storage(){
+           const q = query(collection(dbx, "Media"),where("userID","==","1MypDIE21yXyT8s4YFDDMXM0iqr1"));
+          await getDocs(q).then((snapshot)=>{
+              snapshot.forEach(doc=>{
+                const ele = document.createElement('img');
+                ele.src = doc.data().url ; 
+                ele.addEventListener('click',()=>{
+                  // Insert the image divider with the source URL of your image
+                  quill.insertEmbed(quill.getSelection(), 'image', doc.data().url);
+                  quill.setSelection(quill.getSelection() + 1); // Move the cursor to the next line
+                });
+                ele.style ="object-fit:fill;width:150px;height:210px;cursor:pointer;";
+                document.getElementById('imagesx').appendChild(ele);
+              })
+          }).catch((e)=>{
+            console.log(e);
+          });
+        }
+
+                
+      </script>
+  </body>
+</html>
